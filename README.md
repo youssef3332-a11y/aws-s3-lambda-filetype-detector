@@ -8,8 +8,7 @@ Whenever a file is uploaded to the bucket, a Lambda function is triggered. It re
 
 ## 🖼️ Architecture Diagram
 
-![Architecture](images/architecture.png) <!-- Replace this with your own image -->
-
+<img src="images/diagram1.png" alt="Architecture Diagram" width="600" height="300"/>
 ---
 
 ## 🚀 Step-by-Step Guide
@@ -18,8 +17,9 @@ Whenever a file is uploaded to the bucket, a Lambda function is triggered. It re
 
 Create a new S3 bucket that will store uploaded files and trigger the Lambda function.
 
-📷 *Screenshot*  
-![Create S3 Bucket](images/create-s3-bucket.png) <!-- Replace this with your screenshot -->
+📷 *Screenshot* 
+
+<img src="images/s3bucket.png"  width="600" height="300"/>
 
 ---
 
@@ -31,22 +31,29 @@ Create a new S3 bucket that will store uploaded files and trigger the Lambda fun
 4. Grant the Lambda permission to access the S3 bucket (`s3:GetObject`).
 
 📷 *Screenshot*  
-![Create Lambda Function](images/create-lambda.png) <!-- Replace this with your screenshot -->
+
+<img src="images/s3_permission.png"  width="600" height="400"/>
 
 ---
+### 🔍 3. execution section
+Once a file is uploaded:
 
-### 🔐 IAM Permissions Required
+The Lambda function is automatically triggered by the S3 event. You can verify that the function was triggered by checking the logs in Amazon CloudWatch.
 
-Make sure your Lambda execution role includes at least these permissions:
+📷 *Screenshot* 
 
-```json
-{
-  "Effect": "Allow",
-  "Action": [
-    "s3:GetObject",
-    "logs:CreateLogGroup",
-    "logs:CreateLogStream",
-    "logs:PutLogEvents"
-  ],
-  "Resource": "*"
-}
+<img src="images/showrunningfunction.png"  width="600" height="300"/>
+
+
+📷 *Screenshot*
+
+<img src="images/result.png"  width="600" height="300"/>
+
+### 4.✅ Conclusion
+This project is a simple demonstration of how AWS S3 and Lambda can work together to automate file analysis. It shows how easy it is to:
+
+-React to file uploads in real-time
+
+-Run serverless code with no infrastructure setup
+
+-View logs directly in CloudWatch
