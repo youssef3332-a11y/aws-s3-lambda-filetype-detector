@@ -25,10 +25,9 @@ Create a new S3 bucket that will store uploaded files and trigger the Lambda fun
 
 ### ⚙️ 2. Create the Lambda Function
 
-1. Go to AWS Lambda and create a new function (Python 3.12).
+1. Go to AWS Lambda and create a new function (Python 3.13).
 2. Paste the code from `lambda_function.py`.
 3. Add a trigger connected to your S3 bucket and select "All object create events".
-4. Grant the Lambda permission to access the S3 bucket (`s3:GetObject`).
 
 📷 *Screenshot*  
 
